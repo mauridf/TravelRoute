@@ -75,8 +75,15 @@ Melhor Rota: GRU -> BRC -> SCL -> ORL -> CDG ao custo de $40
 - `RotaRepository`: Gerencia o armazenamento e recuperação de rotas no banco de dados.
 - `Program.cs`: Contém o fluxo principal do programa.
 
+## Decisões de Design
+- **Separação de responsabilidades:** O projeto foi dividido em camadas principais (UI, Application e Infrastructure), garantindo uma clara separação entre interface do usuário, lógica de negócio e acesso a dados.
+- **Uso de um grafo para cálculo de rotas:** O modelo de dados foi estruturado como um grafo, onde os pontos são nós e as rotas são arestas, permitindo cálculos eficientes com algoritmos customizados.
+- **Persistência em SQLite:** O SQLite foi escolhido por ser leve, portátil e suficiente para as necessidades do sistema.
+- **Interface baseada em console:** A escolha por uma interface de linha de comando simplifica o uso inicial e prioriza a lógica de funcionamento antes de adicionar interfaces gráficas.
+- **Validações no cadastro de rotas:** Foram implementadas validações para evitar entradas inválidas e duplicadas, assegurando a integridade dos dados.
+
 ## Melhorias Futuras (Ideias para outras versões)
-- Implementar uma interface gráfica. (A principio o sistema foi feito em Aplication Console)
+- Implementar uma interface gráfica. (A princípio o sistema foi feito em Application Console)
 - Suporte para diferentes moedas.
 - Adição de restrições, como limite de conexões.
 - Integração com serviços de mapas para visualização das rotas.
